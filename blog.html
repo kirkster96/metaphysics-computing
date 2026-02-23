@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engineering and development blog for Metaphysics Computing.">
+    <title>Blog | Metaphysics Computing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-post-card {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform var(--transition-fast);
+        }
+
+        .blog-post-card:hover {
+            transform: translateX(10px);
+        }
+
+        .post-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Metaphysics<br>Computing</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#apps">Apps</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>Engineering Blog</h1>
+                <p>Thoughts on software, design, and building for the modern mind.</p>
+            </div>
+        </div>
+
+        <div class="container page-content">
+            <!-- Sample Blog Post Item -->
+            <article class="blog-post-card glass">
+                <div class="post-meta">
+                    <span><i class="far fa-calendar-alt"></i> Feb 22, 2026</span>
+                    <span><i class="far fa-folder"></i> Engineering</span>
+                </div>
+                <h2><a href="#">Building Local-First Financial Tools</a></h2>
+                <p>In an era where every transaction runs through a cloud server, we decided to take a step back and
+                    build LocalBudget completely differently. Let's delve into why we chose a strictly local
+                    architecture, the challenges we faced, and the immense privacy benefits it affords to our users.</p>
+                <br>
+                <a href="#" style="font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <!-- Sample Blog Post Item -->
+            <article class="blog-post-card glass">
+                <div class="post-meta">
+                    <span><i class="far fa-calendar-alt"></i> Jan 14, 2026</span>
+                    <span><i class="far fa-folder"></i> Design</span>
+                </div>
+                <h2><a href="#">The Metaphysics Computing Manifesto</a></h2>
+                <p>What does 'Metaphysics Computing' mean? It represents a commitment to software that transcends mere
+                    utility to become an elegant extension of the human mind. Here are the core principles that guide
+                    our development...</p>
+                <br>
+                <a href="#" style="font-weight: 600;">Read More <i class="fas fa-arrow-right"></i></a>
+            </article>
+        </div>
+    </main>
+
+    <footer style="margin-top: 2rem;">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 1rem;">
+                &copy; <span id="year"></span> Metaphysics Computing. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support and marketing for Metaphysics Computing applications.">
+    <title>Support | Metaphysics Computing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Metaphysics<br>Computing</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#apps">Apps</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="blob blob-2" style="width: 200px; height: 200px; bottom: 0; left: 20%;"></div>
+
+            <div class="container">
+                <h1>Support & Contact</h1>
+                <p>We're here to help you get the most out of our tools.</p>
+            </div>
+        </div>
+
+        <div class="container page-content">
+            <div class="grid">
+                <div class="card glass">
+                    <div class="card-icon" style="color: var(--primary-color);">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>For bug reports, feature requests, or account assistance, reach out directly to our engineering
+                        team.</p>
+                    <br>
+                    <a href="mailto:support@metaphysics.computing" class="btn btn-primary"
+                        style="padding: 0.5rem 1rem;">Email Us</a>
+                </div>
+
+                <div class="card glass">
+                    <div class="card-icon" style="color: var(--secondary-color);">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3>App Store Connect</h3>
+                    <p>If you're an Apple user, you can also manage your subscriptions or report issues directly via
+                        your App Store account settings.</p>
+                </div>
+            </div>
+
+            <div class="glass" style="margin-top: 3rem; padding: 2rem;">
+                <h2>LocalBudget FAQ</h2>
+                <ul>
+                    <li><strong>How do I backup my data?</strong> LocalBudget uses your native device backup systems
+                        (like iCloud for iOS) automatically.</li>
+                    <li><strong>Do you sync across devices?</strong> Currently, LocalBudget is device specific to
+                        maximize privacy, but explicit opt-in syncing (such as iCloud Sync) may be added in the future.
+                    </li>
+                    <li><strong>I found a bug, where do I report it?</strong> Please use the email support link above!
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 2rem;">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 1rem;">
+                &copy; <span id="year"></span> Metaphysics Computing. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Metaphysics Computing - Showcase of beautiful, premium apps including LocalBudget.">
+    <title>Metaphysics Computing | App Showcase & Support</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Metaphysics<br>Computing</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#apps">Apps</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- Decorative Background Blobs -->
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            
+            <div class="container header-container">
+                <div class="hero-content">
+                    <h1>Building Tools for the Modern Mind</h1>
+                    <p>Discover beautifully designed applications tailored for personal finance, productivity, and computing excellence. Designed locally, for everyone.</p>
+                    <a href="#apps" class="btn btn-primary">Explore Our Apps</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="apps" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Applications</h2>
+                
+                <div class="grid">
+                    <!-- App Card: LocalBudget -->
+                    <div class="card glass">
+                        <div class="card-icon" style="color: var(--secondary-color);">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3>LocalBudget</h3>
+                        <p>Take control of your personal finances with absolute privacy. LocalBudget stores all your data securely on your device. Manage accounts, plan goals, and pay off debt seamlessly.</p>
+                        <br>
+                        <a href="privacy.html" style="font-size: 0.9em; font-weight: 600;">View Privacy Policy <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Placeholder for Future App -->
+                    <div class="card glass">
+                        <div class="card-icon" style="color: var(--primary-color);">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Future App</h3>
+                        <p>We are constantly exploring new ideas. Stay tuned for upcoming tools focusing on creativity and developer productivity.</p>
+                    </div>
+
+                    <!-- Placeholder for Blog / Updates -->
+                    <div class="card glass">
+                        <div class="card-icon" style="color: #10b981;">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3>Latest Updates</h3>
+                        <p>Read about our development process, technical deep dives, and upcoming features on our new engineering blog.</p>
+                        <br>
+                        <a href="blog.html" style="font-size: 0.9em; font-weight: 600;">Read the Blog <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Metaphysics<br>Computing</div>
+                    <p style="color: var(--text-muted); max-width: 300px;">Crafting private, beautiful, and functional software applications for macOS, iOS, and beyond.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">Connect</h4>
+                    <ul>
+                        <li><a href="https://github.com/metaphysics-computing" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="mailto:support@metaphysics.computing"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Metaphysics Computing. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
