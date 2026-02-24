@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LocalBudget - Absolute privacy, complete financial control.">
+    <title>LocalBudget | Private Personal Finance</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            padding-top: 10rem;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 0 2.5rem;
+        }
+
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .app-store-btn i {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+        }
+
+        .app-store-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        [data-theme="light"] .app-store-btn:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            text-align: left;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Metaphysics<br>Computing</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#apps">Apps</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero relative">
+            <!-- Decorative Background Blobs -->
+            <div class="blob blob-1" style="background: var(--secondary-color); opacity: 0.2;"></div>
+            <div class="blob blob-2" style="background: var(--primary-color); opacity: 0.1;"></div>
+
+            <div class="container header-container">
+                <div class="hero-content">
+                    <h1>Absolute Privacy.<br>Financial Control.</h1>
+                    <p class="hero-subtitle">Take charge of your personal finances with a powerful app that keeps your
+                        data strictly on your device. Zero cloud storage. Zero harvesting.</p>
+                    <a href="#" class="app-store-btn">
+                        <i class="fab fa-apple"></i>
+                        Download on the App Store
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="card glass feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h3>Local-First Privacy</h3>
+                        <p>Your financial data is your business. LocalBudget stores everything locally on your device
+                            using native encrypted storage. We couldn't look at your data even if we wanted to.</p>
+                    </div>
+
+                    <div class="card glass feature-card">
+                        <div class="feature-icon" style="color: var(--primary-color);">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Intelligent Debt Payoff</h3>
+                        <p>Say goodbye to debt faster. LocalBudget features specialized journeys designed to help you
+                            tackle loans and credit cards effectively.</p>
+                    </div>
+
+                    <div class="card glass feature-card">
+                        <div class="feature-icon" style="color: #10b981;">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Powerful Budgeting</h3>
+                        <p>Track your spending with precision. Create flexible budgets, monitor your progress, and
+                            ensure every dollar is accounted for.</p>
+                    </div>
+
+                    <div class="card glass feature-card">
+                        <div class="feature-icon" style="color: #f59e0b;">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Fast & Responsive</h3>
+                        <p>Designed natively for Apple platforms, LocalBudget is blazing fast. No loading screens, no
+                            server latency. Just instant access to your money.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">LocalBudget</div>
+                    <p style="color: var(--text-muted); max-width: 300px;">A product of Metaphysics Computing.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">LocalBudget</h4>
+                    <ul>
+                        <li><a href="support.html">Support / FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">Company</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Metaphysics Computing. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
