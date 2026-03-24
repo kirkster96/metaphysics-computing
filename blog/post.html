@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog post — Metaphysics Computing">
+    <title>Blog Post | Metaphysics Computing</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- marked.js — lightweight Markdown → HTML renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Metaphysics<br>Computing</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#apps">Apps</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../localbudget/support.html">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <a href="../blog.html" class="back-to-blog"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+                <h1 id="post-title">Loading…</h1>
+                <div class="post-meta" id="post-meta" style="justify-content: center;"></div>
+            </div>
+        </div>
+
+        <div class="container page-content">
+            <article class="blog-prose" id="post-body">
+                <p style="text-align:center; color: var(--text-muted);">Loading post…</p>
+            </article>
+        </div>
+    </main>
+
+    <footer style="margin-top: 2rem;">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 1rem;">
+                &copy; <span id="year"></span> Metaphysics Computing. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        (async () => {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+
+            if (!slug) {
+                document.getElementById('post-title').textContent = 'Post not found';
+                document.getElementById('post-body').innerHTML =
+                    '<p>No post slug was provided. <a href="../blog.html">Return to the blog</a>.</p>';
+                return;
+            }
+
+            try {
+                const res = await fetch(`posts/${slug}.md`);
+                if (!res.ok) throw new Error('Not found');
+                const raw = await res.text();
+
+                // Parse front matter (--- delimited YAML block)
+                let title = slug;
+                let date = '';
+                let category = '';
+                let body = raw;
+
+                const fmMatch = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+                if (fmMatch) {
+                    const fm = fmMatch[1];
+                    body = fmMatch[2];
+
+                    const titleMatch = fm.match(/^title:\s*(.+)$/m);
+                    const dateMatch = fm.match(/^date:\s*(.+)$/m);
+                    const catMatch = fm.match(/^category:\s*(.+)$/m);
+
+                    if (titleMatch) title = titleMatch[1].trim();
+                    if (dateMatch) date = dateMatch[1].trim();
+                    if (catMatch) category = catMatch[1].trim();
+                }
+
+                // Update page
+                document.title = `${title} | Metaphysics Computing`;
+                document.querySelector('meta[name="description"]').setAttribute('content', title);
+                document.getElementById('post-title').textContent = title;
+
+                let metaHTML = '';
+                if (date) metaHTML += `<span><i class="far fa-calendar-alt"></i> ${date}</span>`;
+                if (category) metaHTML += `<span><i class="far fa-folder"></i> ${category}</span>`;
+                document.getElementById('post-meta').innerHTML = metaHTML;
+
+                // Render Markdown
+                document.getElementById('post-body').innerHTML = marked.parse(body);
+
+            } catch (err) {
+                document.getElementById('post-title').textContent = 'Post not found';
+                document.getElementById('post-body').innerHTML =
+                    `<p>Could not load the requested post. <a href="../blog.html">Return to the blog</a>.</p>`;
+            }
+        })();
+    </script>
+</body>
+
+</html>

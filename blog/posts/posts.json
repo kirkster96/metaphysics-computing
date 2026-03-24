@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "2026-02-22-building-local-first-financial-tools",
+    "title": "Building Local-First Financial Tools",
+    "date": "Feb 22, 2026",
+    "category": "Engineering",
+    "excerpt": "In an era where every transaction runs through a cloud server, we decided to take a step back and build LocalBudget completely differently. Let's delve into why we chose a strictly local architecture, the challenges we faced, and the immense privacy benefits it affords to our users."
+  },
+  {
+    "slug": "2026-01-14-the-metaphysics-computing-manifesto",
+    "title": "The Metaphysics Computing Manifesto",
+    "date": "Jan 14, 2026",
+    "category": "Design",
+    "excerpt": "What does 'Metaphysics Computing' mean? It represents a commitment to software that transcends mere utility to become an elegant extension of the human mind. Here are the core principles that guide our development..."
+  }
+]
