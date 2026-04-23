@@ -1,236 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - LocalBudget</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Get help with LocalBudget - Contact support, report bugs, or find documentation for your personal finance app.">
+    <title>Support | LocalBudget - Metaphysics Computing</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .background-blob {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
-            border-radius: 50%;
-            z-index: -1;
-            filter: blur(60px);
-        }
-
-        .blob-1 {
-            top: -100px;
-            right: -100px;
-        }
-
-        .blob-2 {
-            bottom: -100px;
-            left: -100px;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        header {
+        .support-header {
+            padding: 140px 0 40px;
             text-align: center;
-            margin-bottom: 40px;
+            position: relative;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            background: var(--accent-gradient);
+        .support-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            color: transparent;
         }
 
-        .subtitle {
+        .support-subtitle {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            margin-top: 0.75rem;
         }
 
-        section {
-            margin-bottom: 32px;
+        .support-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 4rem;
         }
 
-        h2 {
+        .support-content h2 {
             font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 16px;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .support-card {
             display: flex;
-            align-items: center;
-        }
-
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 4px;
-            height: 24px;
-            background: var(--accent-gradient);
-            margin-right: 12px;
-            border-radius: 2px;
-        }
-
-        p {
-            margin-bottom: 16px;
-            color: #cbd5e1;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
+            flex-direction: column;
+            padding: 2rem;
+            background: var(--surface-color);
+            border: 1px solid var(--surface-border);
             border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
             text-decoration: none;
-            display: block;
+            color: inherit;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+                border-color var(--transition-fast);
+        }
+
+        .support-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow);
+            border-color: var(--primary-color);
             color: inherit;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-color);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
-            color: var(--text-color);
+        .support-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
         }
 
-        .card h3 svg {
-            margin-right: 12px;
+        .support-card-icon.github {
+            background: rgba(129, 140, 248, 0.12);
+            color: var(--primary-color);
         }
 
-        .card p {
-            margin-bottom: 0;
+        .support-card-icon.email {
+            background: rgba(244, 114, 182, 0.12);
+            color: var(--secondary-color);
+        }
+
+        .support-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-card p {
+            color: var(--text-muted);
             font-size: 0.95rem;
-            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            flex-grow: 1;
         }
 
-        footer {
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid var(--glass-border);
-            text-align: center;
-            color: var(--text-muted);
+        .support-card .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            font-weight: 600;
             font-size: 0.9rem;
+            color: var(--primary-color);
         }
 
-        @media (max-width: 640px) {
-            .container {
-                padding: 24px;
+        .support-card:hover .card-link {
+            gap: 0.75rem;
+        }
+
+        .info-section {
+            padding: 2rem;
+            background: var(--surface-color);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            margin-bottom: 2rem;
+        }
+
+        .info-section h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-section h2 i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .info-section p strong {
+            color: var(--text-color);
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            padding: 1.5rem 2rem;
+            background: var(--surface-color);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .support-header h1 {
+                font-size: 2.2rem;
             }
 
-            h1 {
-                font-size: 1.8rem;
+            .support-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="background-blob blob-1"></div>
-    <div class="background-blob blob-2"></div>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Metaphysics<br>Computing</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#apps">Apps</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
 
-    <div class="container">
-        <header>
-            <h1>Need Help?</h1>
-            <p class="subtitle">We're here to help you master your local budget.</p>
-        </header>
-
-        <section>
-            <h2>Get in Touch</h2>
-            <p>If you encounter any issues, have feature requests, or just want to provide feedback, please use the
-                channels below.</p>
-
-            <a href="https://github.com/kirkster96/LocalBudget/issues" class="card" target="_blank">
-                <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                        </path>
-                    </svg> GitHub Issues</h3>
-                <p>Bugs & Feature Requests (Recommended). Track the progress of your request transparently.</p>
-            </a>
-
-            <a href="mailto:support@mpc.com" class="card">
-                <h3><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg> Email Support</h3>
-                <p>For private inquiries or account-specific questions. We'll get back to you as soon as possible.</p>
-            </a>
+    <main>
+        <section class="support-header">
+            <div class="container">
+                <h1>Need Help?</h1>
+                <p class="support-subtitle">We're here to help you master your local budget.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>Data Issues</h2>
-            <p>Remember that LocalBudget is <strong>local-first</strong>. If you clear your app data or uninstall the
-                app without a backup, your budget data may be lost. If you are having issues with bank sync, please
-                check your SimpleFin connection in Settings first.</p>
-        </section>
+        <section class="section">
+            <div class="container support-content">
+                <h2>Get in Touch</h2>
 
-        <footer>
-            <p>&copy; 2026 LocalBudget. Your data, your control.</p>
-        </footer>
-    </div>
+                <div class="support-grid">
+                    <a href="https://github.com/kirkster96/LocalBudget/issues" class="support-card" target="_blank"
+                        rel="noopener noreferrer" id="github-support-card">
+                        <div class="support-card-icon github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub Issues</h3>
+                        <p>Bugs & Feature Requests (Recommended). Track the progress of your request transparently on
+                            our open-source repository.</p>
+                        <span class="card-link">Open GitHub <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="mailto:support@metaphysics.computing" class="support-card" id="email-support-card">
+                        <div class="support-card-icon email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>For private inquiries or account-specific questions. We'll get back to you as soon as
+                            possible.</p>
+                        <span class="card-link">Send Email <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+
+                <div class="info-section">
+                    <h2><i class="fas fa-circle-info"></i> Data Issues</h2>
+                    <p>Remember that LocalBudget is <strong>local-first</strong>. If you clear your app data or
+                        uninstall the app without a backup, your budget data may be lost. If you are having issues with
+                        bank sync, please check your SimpleFin connection in Settings first.</p>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Where is my data stored?</h3>
+                        <p>All your financial data is stored exclusively on your device. We do not have servers that
+                            store your personal information. Your data never leaves your phone.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I back up my data?</h3>
+                        <p>Your LocalBudget data is included in your device's standard backup process (e.g., iCloud
+                            Backup for iOS). Restoring your device from a backup will restore your LocalBudget data as
+                            well.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is my bank information safe?</h3>
+                        <p>Yes. LocalBudget never sees or stores your bank login credentials. If you use the optional
+                            bank sync feature, all authentication is handled securely through SimpleFin's
+                            infrastructure.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I delete all my data?</h3>
+                        <p>You can delete individual accounts and transactions within the app, clear the app's data
+                            from your device settings, or simply uninstall the application. Since everything is stored
+                            locally, removing the app removes all data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">LocalBudget</div>
+                    <p style="color: var(--text-muted); max-width: 300px;">A product of Metaphysics Computing.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">LocalBudget</h4>
+                    <ul>
+                        <li><a href="support.html">Support / FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">Company</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Metaphysics Computing. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

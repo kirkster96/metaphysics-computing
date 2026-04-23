@@ -1,213 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - LocalBudget</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Privacy Policy for LocalBudget - Learn how we protect your financial data with our local-first approach.">
+    <title>Privacy Policy | LocalBudget - Metaphysics Computing</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .background-blob {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
-            border-radius: 50%;
-            z-index: -1;
-            filter: blur(60px);
-        }
-
-        .blob-1 { top: -100px; right: -100px; }
-        .blob-2 { bottom: -100px; left: -100px; }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        header {
+        .policy-header {
+            padding: 140px 0 40px;
             text-align: center;
-            margin-bottom: 40px;
+            position: relative;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            background: var(--accent-gradient);
+        .policy-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            color: transparent;
         }
 
         .effective-date {
             color: var(--text-muted);
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            margin-top: 0.5rem;
         }
 
-        section {
-            margin-bottom: 32px;
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 4rem;
         }
 
-        h2 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 16px;
+        .policy-content .intro-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .policy-section {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            border-radius: 16px;
+            background: var(--surface-color);
+            border: 1px solid var(--surface-border);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .policy-section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .policy-section h2 {
+            font-size: 1.35rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
+            gap: 0.75rem;
         }
 
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 4px;
-            height: 24px;
-            background: var(--accent-gradient);
-            margin-right: 12px;
-            border-radius: 2px;
+        .policy-section h2 i {
+            font-size: 1.1rem;
+            color: var(--primary-color);
         }
 
-        p {
-            margin-bottom: 16px;
-            color: #cbd5e1;
+        .policy-section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
-        ul {
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section ul {
             list-style: none;
-            margin-bottom: 16px;
+            padding: 0;
+            margin: 0;
         }
 
-        li {
-            margin-bottom: 8px;
-            padding-left: 24px;
+        .policy-section li {
+            padding: 0.5rem 0 0.5rem 1.5rem;
             position: relative;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
-        li::before {
+        .policy-section li::before {
             content: "→";
             position: absolute;
             left: 0;
-            color: var(--accent-color);
-        }
-
-        strong {
-            color: var(--text-color);
+            color: var(--primary-color);
             font-weight: 600;
         }
 
-        footer {
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid var(--glass-border);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .policy-section li strong {
+            color: var(--text-color);
         }
 
-        @media (max-width: 640px) {
-            .container {
-                padding: 24px;
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(129, 140, 248, 0.08);
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            border-radius: 12px;
+            margin-top: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .contact-card i {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
+        .contact-card a {
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .policy-header h1 {
+                font-size: 2.2rem;
             }
-            h1 {
-                font-size: 1.8rem;
+
+            .policy-section {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="background-blob blob-1"></div>
-    <div class="background-blob blob-2"></div>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Metaphysics<br>Computing</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#apps">Apps</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </header>
 
-    <div class="container">
-        <header>
-            <h1>Privacy Policy</h1>
-            <p class="effective-date">Effective Date: February 17, 2026</p>
-        </header>
-
-        <section>
-            <p><strong>LocalBudget</strong> is committed to protecting your privacy. This Privacy Policy explains how we handle your data with a focus on local sovereignty and transparency.</p>
+    <main>
+        <section class="policy-header">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p class="effective-date">Effective Date: February 17, 2026</p>
+            </div>
         </section>
 
-        <section>
-            <h2>1. Local-First Approach</h2>
-            <p>LocalBudget is designed as a "local-first" application. Your financial data, including budgets, account names, and transaction history, is stored exclusively on your device. We do not maintain central servers that store your personal financial information.</p> section>
+        <section class="section">
+            <div class="container policy-content">
+                <p class="intro-text"><strong>LocalBudget</strong> is committed to protecting your privacy. This
+                    Privacy Policy explains how we handle your data with a focus on local sovereignty and
+                    transparency.</p>
 
-        <section>
-            <h2>2. Bank Synchronization (Optional)</h2>
-            <p>If you choose to use the bank synchronization feature, LocalBudget integrates with <strong>SimpleFin</strong>, a secure third-party data aggregator.</p>
-            <ul>
-                <li><strong>Storage:</strong> Your SimpleFin "Access URL" is stored securely on your device utilizing system-native secure storage.</li>
-                <li><strong>Credentials:</strong> We never see or store your bank credentials. All authentication is managed via SimpleFin's secure infrastructure.</li>
-                <li><strong>Data Flow:</strong> Financial data is fetched directly from SimpleFin to your device locally.</li>
-            </ul>
+                <div class="policy-section">
+                    <h2><i class="fas fa-database"></i> 1. Local-First Approach</h2>
+                    <p>LocalBudget is designed as a "local-first" application. Your financial data, including budgets,
+                        account names, and transaction history, is stored exclusively on your device. We do not maintain
+                        central servers that store your personal financial information.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2><i class="fas fa-link"></i> 2. Bank Synchronization (Optional)</h2>
+                    <p>If you choose to use the bank synchronization feature, LocalBudget integrates with
+                        <strong>SimpleFin</strong>, a secure third-party data aggregator.</p>
+                    <ul>
+                        <li><strong>Storage:</strong> Your SimpleFin "Access URL" is stored securely on your device
+                            utilizing system-native secure storage.</li>
+                        <li><strong>Credentials:</strong> We never see or store your bank credentials. All
+                            authentication is managed via SimpleFin's secure infrastructure.</li>
+                        <li><strong>Data Flow:</strong> Financial data is fetched directly from SimpleFin to your device
+                            locally.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2><i class="fas fa-camera"></i> 3. Receipt Scanning (Optional)</h2>
+                    <p>When using the receipt scanning feature, the processing of images and extraction of text is
+                        performed <strong>locally on your device</strong> using system-native OCR (Optical Character
+                        Recognition) capabilities (such as Apple's Vision framework or Android's ML Kit). Images are not
+                        uploaded to external servers for processing.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2><i class="fas fa-eye-slash"></i> 4. No Analytics or Tracking</h2>
+                    <p>LocalBudget does not utilize third-party analytics, crash reporting, or tracking services. Your
+                        usage of the app remains entirely private.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2><i class="fas fa-shield-halved"></i> 5. Data Sovereignty</h2>
+                    <p>Since your data is stored locally, you remain in full control. You can delete your data at any
+                        time by:</p>
+                    <ul>
+                        <li>De-linking accounts or deleting transactions within the app.</li>
+                        <li>Clearing the application's data in your device system settings.</li>
+                        <li>Uninstalling the application from your device.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2><i class="fas fa-envelope"></i> 6. Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, please reach out to us.</p>
+                    <div class="contact-card">
+                        <i class="fas fa-at"></i>
+                        <a href="mailto:support@metaphysics.computing">support@metaphysics.computing</a>
+                    </div>
+                </div>
+            </div>
         </section>
+    </main>
 
-        <section>
-            <h2>3. Receipt Scanning (Optional)</h2>
-            <p>When using the receipt scanning feature, the processing of images and extraction of text is performed <strong>locally on your device</strong> using system-native OCR (Optical Character Recognition) capabilities. Images are not uploaded to external servers for processing.</p>
-        </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">LocalBudget</div>
+                    <p style="color: var(--text-muted); max-width: 300px;">A product of Metaphysics Computing.</p>
+                </div>
 
-        <section>
-            <h2>4. No Analytics or Tracking</h2>
-            <p>LocalBudget does not utilize third-party analytics, crash reporting, or tracking services. Your usage of the app remains entirely private.</p>
-        </section>
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">LocalBudget</h4>
+                    <ul>
+                        <li><a href="support.html">Support / FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
 
-        <section>
-            <h2>5. Data Sovereignty</h2>
-            <p>Since your data is stored locally, you remain in full control. You can delete your data at any time by:</p>
-            <ul>
-                <li>De-linking accounts or deleting transactions within the app.</li>
-                <li>Clearing the application's data in your device system settings.</li>
-                <li>Uninstalling the application from your device.</li>
-            </ul>
-        </section>
+                <div class="footer-links">
+                    <h4 style="margin-bottom: 1rem;">Company</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
 
-        <footer>
-            <p>&copy; 2026 LocalBudget. All rights reserved.</p>
-        </footer>
-    </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Metaphysics Computing. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>

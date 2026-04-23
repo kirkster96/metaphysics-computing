@@ -8,7 +8,7 @@ LocalBudget is an open-source project. The most effective way to track issues is
 
 ## 2. Email Support
 For private inquiries or specific account issues, you can reach out via email.
-- **Email:** [Your Support Email Here]
+- **Email:** [support@metaphysics.computing](mailto:support@metaphysics.computing)
 
 ## 3. Documentation
 Before reaching out, check our internal user manual for common questions and architecture overviews.

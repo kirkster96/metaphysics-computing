@@ -36,9 +36,12 @@ A quick reference for authoring and publishing blog posts on the Metaphysics Com
      "title": "Your Post Title Here",
      "date": "Mar 24, 2026",
      "category": "Engineering",
-     "excerpt": "A brief summary of what this post is about…"
+     "excerpt": "A brief summary of what this post is about…",
+     "image": "assets/blog/on-device-ml-cover.png"
    }
    ```
+
+   The `image` field is **optional** — if omitted, the blog listing card renders without a cover image.
 
    Add new entries **at the top** of the JSON array so the newest post appears first.
 
@@ -66,6 +69,11 @@ blog/
 
 ## Tips
 
-- **Images:** Place images in `assets/blog/` and reference them with `![alt text](../assets/blog/your-image.png)`.
+- **Inline images:** Place images in `assets/blog/` and reference them in your Markdown:
+  ```markdown
+  ![Description shown as caption](/assets/blog/your-image.png)
+  ```
+  The alt text becomes a visible caption below the image.
+- **Cover images:** Add an `"image"` field to your entry in `posts.json` to display a cover image on the blog listing page.
 - **Code blocks:** Use fenced code blocks with a language identifier for syntax highlighting (` ```swift `, ` ```python `, etc.).
 - **Drafts:** Simply don't add the post to `posts.json` until you're ready to publish. The Markdown file can exist without being listed.

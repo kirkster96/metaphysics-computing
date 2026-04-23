@@ -69,6 +69,7 @@
 
                 container.innerHTML = posts.map(post => `
                     <article class="blog-post-card glass">
+                        ${post.image ? `<img src="${post.image}" alt="${post.title}" class="post-cover">` : ''}
                         <div class="post-meta">
                             <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
                             <span><i class="far fa-folder"></i> ${post.category}</span>

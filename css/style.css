@@ -490,6 +490,36 @@ footer {
     border-radius: 12px;
     margin: 1.5rem 0;
     box-shadow: var(--card-shadow);
+    transition: transform var(--transition-medium);
+}
+
+.blog-prose img:hover {
+    transform: scale(1.01);
+}
+
+.blog-prose figure.blog-image {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.blog-prose figure.blog-image img {
+    margin: 0 auto 0.75rem;
+}
+
+.blog-prose figure.blog-image figcaption {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Blog post card cover images */
+.blog-post-card .post-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
 }
 
 .blog-prose hr {

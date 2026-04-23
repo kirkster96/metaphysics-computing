@@ -21,3 +21,11 @@ print(greeting)
 ```
 
 > Blockquotes work like this.
+
+### Images
+
+Place images in `assets/blog/` and reference them in your post:
+
+![A description of your image](/assets/blog/your-image.png)
+
+The description text becomes a visible caption below the image.

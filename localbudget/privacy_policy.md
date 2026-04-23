@@ -26,4 +26,4 @@ Since your data is stored locally, you can delete all of it at any time by:
 - Uninstalling the application.
 
 ## 6. Contact Us
-If you have any questions about this Privacy Policy, please contact us at [Your Contact Email/GitHub].
+If you have any questions about this Privacy Policy, please contact us at [support@metaphysics.computing](mailto:support@metaphysics.computing).

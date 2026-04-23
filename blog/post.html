@@ -107,6 +107,19 @@
                 // Render Markdown
                 document.getElementById('post-body').innerHTML = marked.parse(body);
 
+                // Wrap images that have alt text in <figure> with <figcaption>
+                document.getElementById('post-body').querySelectorAll('img[alt]').forEach(img => {
+                    if (img.alt) {
+                        const figure = document.createElement('figure');
+                        figure.className = 'blog-image';
+                        const caption = document.createElement('figcaption');
+                        caption.textContent = img.alt;
+                        img.parentNode.insertBefore(figure, img);
+                        figure.appendChild(img);
+                        figure.appendChild(caption);
+                    }
+                });
+
             } catch (err) {
                 document.getElementById('post-title').textContent = 'Post not found';
                 document.getElementById('post-body').innerHTML =
